@@ -1,0 +1,67 @@
+<html>
+	<head>
+	<style>
+
+
+
+
+	</style>
+	</head>
+	<body>
+		<div class="waves">
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+		</div>
+	
+		<div class="xcenter ycenter">
+			<div id="envelope" class="xcenter envelope closed" onclick="open_envelope()">
+				<img class="front" src="letter.back.svg">
+				<p class="content"></p>
+				<img class="front" src="letter.front.svg">
+			</div>
+			<h3>Click to Open</h3>
+		</div>
+		
+		<div id="letter" class="modal">
+			<div class="content">
+				<span class="close" onclick="close_envelope()">&times;</span>
+				<h1>Merry Christmas!</h1>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<div class="frame">
+					<img src="https://images.squarespace-cdn.com/content/v1/5c10e1c9fcf7fd0f32a9055e/1607560125660-UK08855OQLA2JV7QRYJR/Screen+Shot+2020-12-10+at+11.28.14+am.png">
+				</div>
+			</div>
+			
+			https://codepen.io/WebDEasy/pen/YoVmBx
+			WYSIWYG 
+			Also can work with font colors like:
+			<span class="editor-btn icon smaller" data-action="foreColor" data-style="FF0000" title="Font-Color Red" style="user-select: none;">
+				  RED
+			</span>
+			case 'foreColor':
+			document.execCommand('foreColor', false, this.dataset.style);
+			break;
+		</div>
+		<script>
+function open_envelope() {
+	var envelope = document.getElementById("envelope");
+	envelope.classList.remove("closed");
+	envelope.classList.add("open");
+	var letter = document.getElementById("letter");
+	letter.classList.remove("closed");
+	letter.classList.add("open");
+}
+function close_envelope() {
+	var letter = document.getElementById("letter");
+	letter.classList.remove("open");
+	letter.classList.add("closed");
+	var envelope = document.getElementById("envelope");
+	envelope.classList.remove("open");
+	envelope.classList.add("closed");
+}
+		</script>
+	</body>
+</html>

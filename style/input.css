@@ -1,0 +1,55 @@
+input {
+    width: 100%;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+input[type=text]:focus{
+    border: 1px solid #555;
+}
+
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+select:focus{
+    border: 2px solid #555;
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: vertical;
+}
+
+button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+button.accept {
+    background-color: #04AA6D; /* Green */
+}

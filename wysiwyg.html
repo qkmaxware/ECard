@@ -1,0 +1,224 @@
+<div id="editor" class="editor">
+    <header>
+        <button type="button" data-action="bold" data-value="" onclick="wysiwyg.action(this, event)"><b>B</b></button>
+        <button type="button" data-action="underline" data-value="" onclick="wysiwyg.action(this, event)"><u>U</u></button>
+        <button type="button" data-action="italic" data-value="" onclick="wysiwyg.action(this, event)"><i>I</i></button>
+        <button type="button" data-action="strikeThrough" data-value=""
+            onclick="wysiwyg.action(this, event)"><strike>S</strike></button>
+        <div class="dropdown">
+            <button type="button"><span class="box" style="background-color: #FF0000"></span></button>
+            <table class="dropdown-content">
+                <tr>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="FFFFFF"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #FFFFFF"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="FF0000"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #FF0000"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="00FF00"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #00FF00"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="0000FF"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #0000FF"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="FFFF00"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #FFFF00"></span></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="d9d9d9"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #d9d9d9"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="d90000"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #d90000"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="00d900"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #00d900"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="0000d9"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #0000d9"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="cccc00"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #cccc00"></span></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="a6a6a6"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #a6a6a6"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="a60000"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #a60000"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="00a600"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #00a600"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="0000a6"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #0000a6"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="999900"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #999900"></span></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="737373"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #737373"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="730000"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #730000"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="007300"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #007300"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="000073"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #000073"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="666600"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #666600"></span></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="404040"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #404040"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="400000"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #400000"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="004000"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #004000"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="000040"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #000040"></span></button>
+                    </td>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="333300"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #333300"></span></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" data-action="foreColor" data-value="000000"
+                            onclick="wysiwyg.action(this, event)"><span class="box"
+                                style="background-color: #000000"></span></button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        |
+        <div class="dropdown">
+            <button title="Justification" type="button">
+                <img src="style/justify.svg">
+            </button>
+            <div class="dropdown-content">
+                <button title="Justify Left" type="button" data-action="justifyLeft" data-value="" onclick="wysiwyg.action(this, event)">
+                    <img src="style/justify.left.svg">
+                </button>
+                <button title="Justify Center" type="button" data-action="justifyCenter" data-value="" onclick="wysiwyg.action(this, event)">
+                    <img src="style/justify.center.svg">
+                </button>
+                <button title="Justify Right" type="button" data-action="justifyRight" data-value="" onclick="wysiwyg.action(this, event)">
+                    <img src="style/justify.right.svg">
+                </button>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button title="Headings" type="button">H</button>
+            <div class="dropdown-content">
+                <button type="button" data-action="insertHTML" data-value="<h1>Heading</h1>"
+                    onclick="wysiwyg.action(this, event)">H<sub>1</sub>&nbsp;Heading</button>
+                <button type="button" data-action="insertHTML" data-value="<h2>Subheading</h2>"
+                    onclick="wysiwyg.action(this, event)">H<sub>2</sub>&nbsp;Subheading</button>
+                <button type="button" data-action="insertHTML" data-value="<h3>Section</h3>"
+                    onclick="wysiwyg.action(this, event)">H<sub>3</sub>&nbsp;Section&nbsp;Heading</button>
+            </div>
+        </div>
+        <button type="button" title="Insert Ordered List" data-action="insertOrderedList" data-value="" onclick="wysiwyg.action(this, event)">
+            <img src="style/ol.svg">
+        </button>
+        <button type="button" title="Insert Unordered List" data-action="insertUnorderedList" data-value="" onclick="wysiwyg.action(this, event)">
+            <img src="style/ul.svg">
+        </button>
+        <button type="button" data-action="insertHorizontalRule" data-value="" onclick="wysiwyg.action(this, event)">-</button>
+        <button type="button" data-action="removeFormat" data-value=""
+            onclick="wysiwyg.action(this, event)"><strike>CLR</strike></button>
+    </header>
+
+    <div id="editor-content" class="content" contenteditable>
+        <h1>Happy Birthday!</h1>
+
+        <p>
+            Dear [Name],
+        </p>
+
+        <p>
+            On your special day, I just want to remind you of how amazing you are and how much you mean to all of us.
+            Your kindness, warmth, and sense of humor light up every room you walk into, and today is all about
+            celebrating you.
+        </p>
+
+        <p>
+            I hope this year brings you endless happiness, new adventures, and memories that will last a lifetime. May
+            all your dreams come true.
+        </p>
+
+        <p>
+            Enjoy every moment of today, and here's to many more birthdays filled with love and joy!
+        </p>
+
+        <p>
+            Cheers to you,<br>
+            [Your Name]
+        </p>
+    </div>
+</div>
+
+<button type="button" onclick="wysiwyg.get_compressed_url_safe_html()">Download</button>

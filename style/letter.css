@@ -1,0 +1,166 @@
+body {
+	color: white;
+	background-color: black;
+}
+
+.xcenter {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.ycenter {
+	margin-top: 50dvh;
+	transform: translateY(-100%);
+}
+
+.envelope {
+	position: relative;
+	width: calc(120px * 2);
+	height: calc(134px * 2);
+	cursor: pointer;
+}
+.envelope img {
+	position: absolute;
+	object-fit: contain;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.envelope.closed {
+	animation: wiggle 0.3s 0.2s infinite;
+}
+
+.envelope.closed:hover {
+	animation: pause;
+}
+
+.envelope .content {
+	width: 90%; 
+	height: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #E0C9A6;
+	transform: translateY(50%) scale(100%, 0%);
+	transform-origin: 50% 100%;
+}
+
+.envelope:hover .content {
+	animation: openenv 0.3s forwards 0.0s 1;
+}
+
+.envelope.open .content {
+	animation: openenv 0.3s forwards 0.0s 1;
+}
+
+@keyframes openenv {
+	0% {
+		transform: translateY(50%) scale(100%, 0%); 
+	}
+	100% {
+		transform: translateY(50%) scale(100%, 100%);
+	}
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0);
+  }
+  
+  25% {
+    transform: rotate(2deg);
+  }
+  
+  50% {
+    transform: rotate(0deg);
+  }
+  
+  75% {
+    transform: rotate(-2deg);
+  }
+  
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal.open {
+	display: block;
+	animation: fadein 0.3s linear 0s 1;
+}
+
+.modal .content {
+	scale: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: xx-large;
+	background-color: #E0C9A6;
+	color: black;
+	margin: 15% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.modal.open .content {
+	animation: scaleup 0.3s forwards 0.4s 1;
+}
+
+@keyframes fadein {
+	0% {
+		background-color: rgba(0,0,0,0); /* Black w/ opacity */
+	}
+	100% {
+		background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	}
+}
+
+@keyframes scaleup {
+	0% {
+		scale: 0;
+	}
+	100% {
+		scale: 100%;
+	}
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.frame {
+	width: 480px;
+	max-width: 50dvw;
+	border: 3px solid #ccc;
+	background: #eee;
+	margin: auto;
+	padding: 15px 15px;
+}
+
+.frame img {
+	width: 100%;
+}

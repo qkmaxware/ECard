@@ -1,0 +1,63 @@
+<html>
+	<head>
+        <title>Open Your Card</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style/themes/theme.css">
+		<link rel="stylesheet" href="style/themes/snowflakes.css">
+		<link rel="stylesheet" href="style/themes/waves.css">
+
+        <link rel="stylesheet" href="style/letter.css">
+    </head>
+    <body>
+		<div class="theme snowfall">
+            <div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+                <div class="snowflake">❄</div>
+            </div>
+        </div>
+        <div class="theme waves active">
+			<div class="wave"></div>
+			<div class="wave"></div>
+			<div class="wave"></div>
+		</div>
+
+		<h1 id="header" class="xcenter"></h1>
+        <div class="xcenter ycenter">
+			<div id="envelope" class="xcenter envelope closed" onclick="open_envelope()">
+				<img class="front" src="style/letter.back.svg">
+				<p class="content"></p>
+				<img class="front" src="style/letter.front.svg">
+			</div>
+			<h3>Click to Open</h3>
+		</div>
+
+        <div id="letter" class="modal">
+			<div class="content">
+				<span class="close" onclick="close_envelope()">&times;</span>
+				<div id="user-content">
+					<h1>Merry Christmas!</h1>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</p>
+					<div class="frame">
+						<img src="https://images.squarespace-cdn.com/content/v1/5c10e1c9fcf7fd0f32a9055e/1607560125660-UK08855OQLA2JV7QRYJR/Screen+Shot+2020-12-10+at+11.28.14+am.png">
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <script src="src/envelope.js"></script>
+		<script src="src/theme.js"></script>
+		<script src="src/wysiwyg.js"></script>
+		<script>
+			set_theme_from_queryparams();
+		</script>
+    </body>
+</html>
