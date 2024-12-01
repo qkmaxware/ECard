@@ -1,18 +1,22 @@
 input {
     width: 100%;
-}
-
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: 1px solid #555;
     border-radius: 4px;
     background-color: #f8f8f8;
 }
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+}
 input[type=text]:focus{
     border: 1px solid #555;
+}
+
+input[type=color] {
+    min-height: 2em;
 }
 
 select {

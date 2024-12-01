@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="style/themes/theme.css">
 		<link rel="stylesheet" href="style/themes/snowflakes.css">
 		<link rel="stylesheet" href="style/themes/waves.css">
+        <link rel="stylesheet" href="style/themes/balloons.css">
 
         <link rel="stylesheet" href="style/letter.css">
         <link rel="stylesheet" href="style/input.css">
@@ -29,11 +30,24 @@
 			<div class="wave"></div>
 			<div class="wave"></div>
 		</div>
+        <div class="theme balloons">
+            <div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+            </div>
+        </div>
 
         <div class="xcenter">
 			<div id="envelope" class="xcenter envelope closed">
 				<img class="front" src="style/letter.back.svg">
-				<p class="content"></p>
+				<p id="letter-small" class="content"></p>
 				<img class="front" src="style/letter.front.svg">
 			</div>
 		</div>
@@ -50,6 +64,16 @@
                         <option>None</option>
                         <option value="snowfall">Snowing</option>
                         <option value="waves">Waves</option>
+                        <option value="balloons">Balloons</option>
+                    </select>
+                    <label>Letter Colour <small>(Light colours tend to work the best)</small></label>
+                    <input type="color" id="opt-letter-colour" value="#E0C9A6" onchange="change_letter_colour(event)"/>
+                    <label>Letter Border</label>
+                    <select id="opt-letter-border">
+                        <option value="none">None</option>
+                        <option value="4px solid gray">Solid</option>
+                        <option value="4px dotted gray">Dotted</option>
+                        <option value="4px dashed gray">Dashed</option>
                     </select>
                 </fieldset>
                 <fieldset>
@@ -57,13 +81,13 @@
                     <!--WYSIWYG editor-->
                     <div id="editor" class="editor">
                         <header>
-                            <button type="button" data-action="bold" data-value="" onclick="wysiwyg.action(this, event)"><b>B</b></button>
-                            <button type="button" data-action="underline" data-value="" onclick="wysiwyg.action(this, event)"><u>U</u></button>
-                            <button type="button" data-action="italic" data-value="" onclick="wysiwyg.action(this, event)"><i>I</i></button>
-                            <button type="button" data-action="strikeThrough" data-value=""
+                            <button type="button" title="Bold" data-action="bold" data-value="" onclick="wysiwyg.action(this, event)"><b>B</b></button>
+                            <button type="button" title="Underline" data-action="underline" data-value="" onclick="wysiwyg.action(this, event)"><u>U</u></button>
+                            <button type="button" title="Italicize" data-action="italic" data-value="" onclick="wysiwyg.action(this, event)"><i>I</i></button>
+                            <button type="button" title="Strikethrough" data-action="strikeThrough" data-value=""
                                 onclick="wysiwyg.action(this, event)"><strike>S</strike></button>
                             <div class="dropdown">
-                                <button type="button"><span class="box" style="background-color: #FF0000"></span></button>
+                                <button type="button" title="Font Colour"><span class="box" style="background-color: #FF0000"></span></button>
                                 <table class="dropdown-content">
                                     <tr>
                                         <td>
@@ -244,8 +268,14 @@
                             <button type="button" title="Insert Unordered List" data-action="insertUnorderedList" data-value="" onclick="wysiwyg.action(this, event)">
                                 <img src="style/ul.svg">
                             </button>
-                            <button type="button" data-action="insertHorizontalRule" data-value="" onclick="wysiwyg.action(this, event)">&mdash;</button>
-                            <button type="button" data-action="removeFormat" data-value=""
+                            <div class="dropdown">
+                                <button title="Image" type="button"><img src="style/image.svg"></button>
+                                <div class="dropdown-content" style="width: 200px">
+                                    <input type="file" id="opt-image-upload" onchange="wysiwyg.upload_image(event)" accept="image/*" capture="environment"/>
+                                </div>
+                            </div>
+                            <button type="button" title="Insert Horizontal Line" data-action="insertHorizontalRule" data-value="" onclick="wysiwyg.action(this, event)">-</button>
+                            <button type="button" title="Clear Formatting" data-action="removeFormat" data-value=""
                                 onclick="wysiwyg.action(this, event)"><strike>CLR</strike></button>
                         </header>
                     
@@ -297,6 +327,11 @@ function change_background(e) {
     set_background(theme_name);
 }
 
+function change_letter_colour(e) {
+    var colour = e.target.value;
+    set_letter_color(colour);
+}
+
 async function make_link() {
     var base_url = window.location.origin;
     var path = window.location.pathname.split( '/' ); path.pop();
@@ -304,6 +339,8 @@ async function make_link() {
 
     return  base_url 
             + "?" + "bg=" + encodeURIComponent(document.getElementById("opt-background").value)
+            + "&" + "lcolour=" + encodeURIComponent(document.getElementById("opt-letter-colour").value)
+            + "&" + "lborder=" + encodeURIComponent(document.getElementById("opt-letter-border").value)
             + "&" + "title=" + encodeURIComponent(document.getElementById("opt-salutation").value) 
             + "&" + "content=" + encodeURIComponent(await wysiwyg.get_compressed_url_safe_html()) 
             ;

@@ -7,6 +7,50 @@ wysiwyg = (function(){
         document.execCommand(command, false, value);
     };
 
+    exports.upload_image = function(e) {
+        var files = e.target.files;
+        console.log(files);
+    
+        if (files && files.length > 0) {
+            var file = files[0];
+    
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                const img = new Image();
+                img.onload = function() {
+                    const maxWidth = 300;
+                    const maxHeight = 300;
+    
+                    let width = img.width;
+                    let height = img.height;
+    
+                    if (width > maxWidth || height > maxHeight) {
+                        const scale = Math.min(maxWidth / width, maxHeight / height);
+                        width = width * scale;
+                        height = height * scale;
+                    } 
+    
+                    var canvas = document.createElement("canvas");
+                    canvas.width = width;
+                    canvas.height = height;
+                    var context = canvas.getContext("2d");
+    
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    context.drawImage(img, 0, 0, width, height);
+    
+                    var data = canvas.toDataURL('image/jpeg');
+                    document.execCommand("insertHTML", false, `<img src="${data}">`);
+                    e.target.value = "";
+                }
+                img.src = e.target.result;
+            };
+            reader.onerror = function (error) {
+                console.log('Error: ', error);
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
     exports.get_html = function() {
         return document.getElementById("editor-content").innerHTML;
     }

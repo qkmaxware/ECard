@@ -1,0 +1,159 @@
+.theme.balloons {
+    background: rgb(252,176,69);
+    background: -moz-linear-gradient(8deg, rgba(252,176,69,1) 0%, rgba(253,29,29,1) 50%, rgba(162,100,204,1) 100%);
+    background: -webkit-linear-gradient(8deg, rgba(252,176,69,1) 0%, rgba(253,29,29,1) 50%, rgba(162,100,204,1) 100%);
+    background: linear-gradient(8deg, rgba(252,176,69,1) 0%, rgba(253,29,29,1) 50%, rgba(162,100,204,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fcb045",endColorstr="#a264cc",GradientType=1);
+}
+
+.balloon {
+    color: #fff;
+    font-size: 2em;
+    font-family: Arial;
+    text-shadow: 0 0 1px #000;
+    width: 64px;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@-webkit-keyframes balloons-rise {
+    0% {
+        top: -10%
+    }
+
+    100% {
+        top: 100%
+    }
+}
+
+@-webkit-keyframes balloons-shake {
+    0% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px)
+    }
+
+    50% {
+        -webkit-transform: translateX(80px);
+        transform: translateX(80px)
+    }
+
+    100% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px)
+    }
+}
+
+@keyframes balloons-rise {
+    0% {
+        top: calc(100% + 120px);
+    }
+
+    100% {
+        top: -120px
+    }
+}
+
+@keyframes balloons-shake {
+    0% {
+        transform: translateX(0px)
+    }
+
+    50% {
+        transform: translateX(80px)
+    }
+
+    100% {
+        transform: translateX(0px)
+    }
+}
+
+.balloon {
+    position: fixed;
+    top: -120px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    -webkit-animation-name: balloons-rise, balloons-shake;
+    -webkit-animation-duration: 10s, 3s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state: running, running;
+    animation-name: balloons-rise, balloons-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running
+}
+
+.balloon:nth-of-type(0) {
+    left: 1%;
+    -webkit-animation-delay: 0s, 0s;
+    animation-delay: 0s, 0s;
+    background-image: url(balloon.blue.svg);
+}
+
+.balloon:nth-of-type(1) {
+    left: 10%;
+    -webkit-animation-delay: 1s, 1s;
+    animation-delay: 1s, 1s;
+    background-image: url(balloon.green.svg);
+}
+
+.balloon:nth-of-type(2) {
+    left: 20%;
+    -webkit-animation-delay: 6s, .5s;
+    animation-delay: 6s, .5s;
+    background-image: url(balloon.orange.svg);
+}
+
+.balloon:nth-of-type(3) {
+    left: 30%;
+    -webkit-animation-delay: 4s, 2s;
+    animation-delay: 4s, 2s;
+    background-image: url(balloon.pink.svg);
+}
+
+.balloon:nth-of-type(4) {
+    left: 40%;
+    -webkit-animation-delay: 2s, 2s;
+    animation-delay: 2s, 2s;
+    background-image: url(balloon.red.svg);
+}
+
+.balloon:nth-of-type(5) {
+    left: 50%;
+    -webkit-animation-delay: 8s, 3s;
+    animation-delay: 8s, 3s;
+    background-image: url(balloon.green.svg);
+}
+
+.balloon:nth-of-type(6) {
+    left: 60%;
+    -webkit-animation-delay: 6s, 2s;
+    animation-delay: 6s, 2s;
+    background-image: url(balloon.orange.svg);
+}
+
+.balloon:nth-of-type(7) {
+    left: 70%;
+    -webkit-animation-delay: 2.5s, 1s;
+    animation-delay: 2.5s, 1s;
+    background-image: url(balloon.blue.svg);
+}
+
+.balloon:nth-of-type(8) {
+    left: 80%;
+    -webkit-animation-delay: 1s, 0s;
+    animation-delay: 1s, 0s;
+    background-image: url(balloon.pink.svg);
+}
+
+.balloon:nth-of-type(9) {
+    left: 90%;
+    -webkit-animation-delay: 3s, 1.5s;
+    animation-delay: 3s, 1.5s;
+    background-image: url(balloon.red.svg);
+}

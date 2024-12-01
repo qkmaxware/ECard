@@ -1,12 +1,12 @@
 <div id="editor" class="editor">
     <header>
-        <button type="button" data-action="bold" data-value="" onclick="wysiwyg.action(this, event)"><b>B</b></button>
-        <button type="button" data-action="underline" data-value="" onclick="wysiwyg.action(this, event)"><u>U</u></button>
-        <button type="button" data-action="italic" data-value="" onclick="wysiwyg.action(this, event)"><i>I</i></button>
-        <button type="button" data-action="strikeThrough" data-value=""
+        <button type="button" title="Bold" data-action="bold" data-value="" onclick="wysiwyg.action(this, event)"><b>B</b></button>
+        <button type="button" title="Underline" data-action="underline" data-value="" onclick="wysiwyg.action(this, event)"><u>U</u></button>
+        <button type="button" title="Italicize" data-action="italic" data-value="" onclick="wysiwyg.action(this, event)"><i>I</i></button>
+        <button type="button" title="Strikethrough" data-action="strikeThrough" data-value=""
             onclick="wysiwyg.action(this, event)"><strike>S</strike></button>
         <div class="dropdown">
-            <button type="button"><span class="box" style="background-color: #FF0000"></span></button>
+            <button type="button" title="Font Colour"><span class="box" style="background-color: #FF0000"></span></button>
             <table class="dropdown-content">
                 <tr>
                     <td>
@@ -187,8 +187,14 @@
         <button type="button" title="Insert Unordered List" data-action="insertUnorderedList" data-value="" onclick="wysiwyg.action(this, event)">
             <img src="style/ul.svg">
         </button>
-        <button type="button" data-action="insertHorizontalRule" data-value="" onclick="wysiwyg.action(this, event)">-</button>
-        <button type="button" data-action="removeFormat" data-value=""
+        <div class="dropdown">
+            <button title="Image" type="button"><img src="style/image.svg"></button>
+            <div class="dropdown-content" style="width: 200px">
+                <input type="file" id="opt-image-upload" onchange="wysiwyg.upload_image(event)" accept="image/*" capture="environment"/>
+            </div>
+        </div>
+        <button type="button" title="Insert Horizontal Line" data-action="insertHorizontalRule" data-value="" onclick="wysiwyg.action(this, event)">-</button>
+        <button type="button" title="Clear Formatting" data-action="removeFormat" data-value=""
             onclick="wysiwyg.action(this, event)"><strike>CLR</strike></button>
     </header>
 

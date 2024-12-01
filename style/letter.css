@@ -111,13 +111,17 @@ body {
 	background-color: #E0C9A6;
 	color: black;
 	margin: 15% auto; /* 15% from the top and centered */
-	padding: 20px;
+	padding: 10px;
 	border: 1px solid #888;
 	width: 80%; /* Could be more or less, depending on screen size */
 }
 
 .modal.open .content {
 	animation: scaleup 0.3s forwards 0.4s 1;
+}
+
+#user-content {
+	padding: 10px;
 }
 
 @keyframes fadein {
@@ -139,8 +143,9 @@ body {
 }
 
 .close {
-  color: #aaaaaa;
+  color: gray;
   float: right;
+  margin: 8px;
   font-size: 28px;
   font-weight: bold;
 }
@@ -152,15 +157,11 @@ body {
   cursor: pointer;
 }
 
-.frame {
-	width: 480px;
-	max-width: 50dvw;
-	border: 3px solid #ccc;
+.editor .content img {
+	max-width: min(300px, 50dvw);
 	background: #eee;
-	margin: auto;
+	border: 3px solid #ccc;
+	display: inline-block;
 	padding: 15px 15px;
-}
-
-.frame img {
 	width: 100%;
 }
