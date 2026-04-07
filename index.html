@@ -285,8 +285,10 @@
                             </button>
                             <div class="dropdown">
                                 <button title="Image" type="button"><img src="style/image.svg"></button>
-                                <div class="dropdown-content" style="width: 200px">
+                                <div class="dropdown-content" style="width: 300px">
                                     <input type="file" id="opt-image-upload" onchange="wysiwyg.upload_image(event)" accept="image/*" capture="environment"/>
+                                    <br>
+                                    <button type="button" onclick="wysiwyg.link_image()" style="width: 100%; font-size: small; text-align: left; padding: 4px">Link Image From URL</button>
                                 </div>
                             </div>
                             <button type="button" title="Insert Horizontal Line" data-action="insertHorizontalRule" data-value="" onclick="wysiwyg.action(this, event)">-</button>

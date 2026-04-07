@@ -7,6 +7,15 @@ wysiwyg = (function(){
         document.execCommand(command, false, value);
     };
 
+    exports.link_image = function() {
+        var url = window.prompt("Enter the image URL:", "https://example.com/image.jpg");
+        console.log("User entered URL: " + url);
+        if (url) {
+            console.log("Trying to insert image with url: " + url);
+            document.execCommand("insertHTML", false, `<img src="${url}"/>`);
+        }
+    }
+
     exports.upload_image = function(e) {
         var files = e.target.files;
         console.log(files);
